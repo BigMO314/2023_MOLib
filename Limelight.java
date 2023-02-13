@@ -40,9 +40,15 @@ public final class Limelight {
 	private static final Entry<Double>	entHasTarget = new Entry<Double>(tblLimelight, "tv");
 	private static final Entry<Double> 	entPosX = new Entry<Double>(tblLimelight, "tx");
 	private static final Entry<Double> 	entPosY = new Entry<Double>(tblLimelight, "ty");
-	private static final Entry<Double> 	entWidth = new Entry<Double>(tblLimelight, "thor");
-	private static final Entry<Double> 	entHeight = new Entry<Double>(tblLimelight, "tver");
 	private static final Entry<Double> 	entArea = new Entry<Double>(tblLimelight, "ta");
+	private static final Entry<Double>	entLatency = new Entry<Double>(tblLimelight, "tl");
+	private static final Entry<Double>	entShortestSide = new Entry<Double>(tblLimelight, "tshort");
+	private static final Entry<Double>	entLongestSide = new Entry<Double>(tblLimelight, "tlong");
+	private static final Entry<Double> 	entWidth = new Entry<Double>(tblLimelight, "thor");
+	private static final Entry<Double> 	entHeight = new Entry<Double>(tblLimelight, "tvert");
+	private static final Entry<Double> 	entTruePipeline = new Entry<Double>(tblLimelight, "getpipe");
+	private static final Entry<Double> 	entJSON = new Entry<Double>(tblLimelight, "tjson");
+	private static final Entry<Double> 	entClassID = new Entry<Double>(tblLimelight, "tclass");
 	
 	private static final Entry<Integer>	entLEDMode = new Entry<Integer>(tblLimelight, "ledMode");
 	private static final Entry<Integer>	entCamMode = new Entry<Integer>(tblLimelight, "camMode");
@@ -54,9 +60,15 @@ public final class Limelight {
 	public static boolean hasTarget() { return entHasTarget.get() == 1; }
 	public static double getPosX() { return entPosX.get(); }
 	public static double getPosY() { return entPosY.get(); }
+	public static double getArea() { return entArea.get(); }
+	public static double getLatency() { return entLatency.get(); }
+	public static double getShortestSideLength() { return entShortestSide.get(); }
+	public static double getLongestSideLength() { return entLongestSide.get(); }
 	public static double getWidth() { return entWidth.get(); }
 	public static double getHeight() { return entHeight.get(); }
-	public static double getArea() { return entArea.get(); }
+	public static double getTruePipeline() { return entTruePipeline.get(); }
+	public static double getJSON() { return entJSON.get(); }
+	public static double getClassID() { return entClassID.get(); }
 	
 	public static void setLEDMode(LEDMode mode) { entLEDMode.set(mode.value); }
 	public static void setCamMode(CamMode mode) { entCamMode.set(mode.value); }

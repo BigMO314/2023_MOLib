@@ -3,8 +3,10 @@ package frc.molib.hid;
 import frc.molib.utilities.MOUtility;
 
 /**
- * A simple wrapper class on {@link edu.wpi.first.wpilibj.XboxController} that provides additional functionality such as:
- * built-in deadzones on axes, option to invert the Y-axis of the joysticks, simple control over the rumble feature, 
+ * A wrapper class on {@link edu.wpi.first.wpilibj.XboxController} 
+ * that provides additional functionality such as:
+ * built-in deadzones on axes, the option to invert the Y-axis of the joysticks, 
+ * simple control over the rumble feature, 
  * and the abililty to read the triggers as individual buttons.
  */
 public class XboxController extends edu.wpi.first.wpilibj.XboxController {
@@ -39,7 +41,7 @@ public class XboxController extends edu.wpi.first.wpilibj.XboxController {
 	}
 
 	/**
-	 * Get the value of the axis with the deadzone applied.
+	 * Read the value of the axis with the deadzone applied.
 	 *
 	 * @param axis The axis to read, using the Axis enumeration
 	 * @return The value of the axis
@@ -49,11 +51,11 @@ public class XboxController extends edu.wpi.first.wpilibj.XboxController {
 	}
 
 	/**
-   * Get the value of the axis with the deadzone applied.
-   *
-   * @param axis The axis to read, starting at 0.
-   * @return The value of the axis.
-   */
+	 * Read the value of the axis with the deadzone applied.
+	 *
+	 * @param axis The axis to read, starting at 0.
+	 * @return The value of the axis.
+	 */
 	@Override
 	public double getRawAxis(int axis) { 
 		return MOUtility.deadenAxis(super.getRawAxis(axis), mDeadzoneThreshold); 
@@ -72,18 +74,18 @@ public class XboxController extends edu.wpi.first.wpilibj.XboxController {
 	}
 	
 	/**
-	 * Get the Left Trigger as if it were a button.
+	 * Read the Left Trigger as if it were a button.
 	 * @return Whether the Left Trigger is pressed past the configured threshold
 	 */
-	public boolean getLeftTrigger() { 
+	public boolean getLeftTriggerButton() { 
 		return super.getLeftTriggerAxis() > mTriggerThreshold; 
 	}
 	
 	/**
-	 * Get the Right Trigger as if it were a button.
+	 * Read the Right Trigger as if it were a button.
 	 * @return Whether the Right Trigger is pressed past the configured threshold
 	 */
-	public boolean getRightTrigger() { 
+	public boolean getRightTriggerButton() { 
 		return super.getRightTriggerAxis() > mTriggerThreshold; 
 	}
 

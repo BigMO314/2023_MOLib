@@ -2,6 +2,11 @@ package frc.molib.hid;
 
 import frc.molib.utilities.MOUtility;
 
+/**
+ * A wrapper class on {@link edu.wpi.first.wpilibj.GenericHID} 
+ * that provides additional functionality such as:
+ * built-in deadzones on axes, and simple control over the rumble feature.
+ */
 public class GenericHID extends edu.wpi.first.wpilibj.GenericHID {
     private double mDeadzoneThreshold = 0.1;
 	

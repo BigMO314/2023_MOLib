@@ -6,10 +6,9 @@ import edu.wpi.first.math.MathUtil;
 
 /**
  * A simple class extending {@link edu.wpi.first.math.controller.PIDController}
- * that adds the ability to superficially enable/disable the controller, as well as clamp the output of the calculation.
- * <p><i>Upcoming: timer to ensure target is in range for an appropriate amount of time and not just passing through.</i></p>
+ * that adds the ability to superficially enable/disable the controller, clamp the output of the calculation,
+ * and only read on target if it has been on target for a specified time.
  */
-@SuppressWarnings("unused")
 public class PIDController extends edu.wpi.first.math.controller.PIDController {
 	private boolean mEnabled = false;
 	private double mAtSetpointTime = 0.0;

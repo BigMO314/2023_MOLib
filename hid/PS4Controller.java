@@ -2,6 +2,12 @@ package frc.molib.hid;
 
 import frc.molib.utilities.MOUtility;
 
+/**
+ * A wrapper class on {@link edu.wpi.first.wpilibj.PS4Controller} 
+ * that provides additional functionality such as:
+ * built-in deadzones on axes, the option to invert the Y-axis of the joysticks, 
+ * and simple control over the rumble feature.
+ */
 public class PS4Controller extends edu.wpi.first.wpilibj.PS4Controller {
     private double mDeadzoneThreshold = 0.1;
 	private boolean mIsYAxisInverted = false;
