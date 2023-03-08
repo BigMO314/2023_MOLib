@@ -69,4 +69,13 @@ public class PS4Controller extends edu.wpi.first.wpilibj.PS4Controller {
 		if(mIsYAxisInverted) return super.getRightY();
 		else return -super.getRightY();
 	}
+
+	/**
+	 * Treat the two triggers as one combined axis, 
+	 * left being negative and right being positive.
+	 * @return Combined axis value
+	 */
+	public double getTriggerAxis() { 
+		return getR2Axis() - getL2Axis(); 
+	}
 }

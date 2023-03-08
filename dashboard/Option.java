@@ -6,14 +6,18 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableBuilderImpl;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 
 /**
- * <p>Creates an option chooser in dashboard</p>
+ * <p>Creates a drop-down option chooser in dashboard</p>
  * <b>Still a work in progress!</b>
  * 
  * @param <OptionType> Enumeration tied to the list of options.
  * 
  * @see edu.wpi.first.wpilibj.smartdashboard.SendableChooser
+ * 
+ * @deprecated Temporarily as it no longer updates properly. 
  */
 public class Option<OptionType extends Enum<OptionType>> {
+	//TODO: Add interface with a standard getLabel() method rather than rely on toString()
+
 	private final NetworkTable mParentTable;
 	private final String mKey;
 
@@ -51,4 +55,6 @@ public class Option<OptionType extends Enum<OptionType>> {
 	 * @return Selected object. If one is not selected, returns the default option
 	 */
 	public OptionType get() { return chsSendable.getSelected(); }
+
+	public void update() { SendableRegistry.update(chsSendable); }
 }

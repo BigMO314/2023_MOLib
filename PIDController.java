@@ -25,7 +25,10 @@ public class PIDController extends edu.wpi.first.math.controller.PIDController {
 	 * @param Ki The integral coefficient
 	 * @param Kd The derivative coefficient
 	 */
-	public PIDController(double Kp, double Ki, double Kd) { super(Kp, Ki, Kd); }
+	public PIDController(double Kp, double Ki, double Kd) { 
+		super(Kp, Ki, Kd); 
+		tmrAtSetpoint.start();
+	}
 
 	public boolean isEnabled() { return mEnabled; }
 	public void enable() { mEnabled = true; }
